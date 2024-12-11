@@ -1,9 +1,6 @@
-mod basic;
-use basic::basic1::basic1;
-use basic::basic2::basic2;
+mod algorithm;
+use algorithm::boj11505;
 
 fn main() {
-    println!("hello world!");
-    basic1::test();
-    basic2::test();
+    boj11505::boj11505::solve_main();
 }

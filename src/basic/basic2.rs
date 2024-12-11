@@ -1,5 +1,5 @@
 pub mod basic2 {
-    use std::collections::HashSet;
+    use std::collections::{BinaryHeap, HashSet, VecDeque};
 
     pub fn test() {
         {
@@ -42,6 +42,33 @@ pub mod basic2 {
             let s2 = HashSet::from([1, 2, 3, 4, 5]);
             let intersect: Vec<_> = s1.intersection(&s2).collect();
             println!("{:?}", intersect);
+        }
+
+        {
+            println!("\n[QUEUE TEST]");
+            let mut q: VecDeque<_> = VecDeque::new();
+            for i in 0..10 {
+                q.push_back(i);
+            }
+            for i in 0..10 {
+                q.push_front(i);
+            }
+
+            let find_result = q.binary_search(&3);
+            if let Ok(index) = find_result {
+                println!("{:?}", q[index]);
+            }
+        }
+
+        {
+            println!("\n[PRIORITY QUEUE TEST]");
+            let mut pq: BinaryHeap<_> = BinaryHeap::from([-1, 3, 9, -10, 0, 2, 1]);
+            while !pq.is_empty() {
+                let poped = pq.pop();
+                if let Some(cur) = poped {
+                    print!("{cur} ");
+                }
+            }
         }
     }
 }

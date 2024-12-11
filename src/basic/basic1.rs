@@ -1,4 +1,5 @@
 pub mod basic1 {
+
     fn sum_array(arr: &[i32]) -> i32 {
         let mut result = 0;
         for i in arr {
